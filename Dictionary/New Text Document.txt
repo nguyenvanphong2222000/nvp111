@@ -1,0 +1,16 @@
+public void dictionaryExportToFile() {
+        BufferedWriter bufferedWriter = null;
+        try {
+            bufferedWriter = new BufferedWriter(new FileWriter(FileDictionary));
+            for(Word w: words) {
+                bufferedWriter.write(w.toString() + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
